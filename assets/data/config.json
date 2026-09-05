@@ -1,0 +1,76 @@
+{
+  "brand": {
+    "name": "Academia BioFit",
+    "legalNotice": "Site em preparação. Informações comerciais devem ser confirmadas pela academia antes da publicação oficial."
+  },
+  "contacts": {
+    "whatsapp": "",
+    "instagram": "https://www.instagram.com/ciabiofit_sjtapera/",
+    "phone": "",
+    "email": ""
+  },
+  "location": {
+    "address": "São José da Tapera - AL",
+    "mapQuery": "São José da Tapera AL"
+  },
+  "hours": [
+    {
+      "label": "Segunda a sexta",
+      "value": "A confirmar"
+    },
+    {
+      "label": "Sábado",
+      "value": "A confirmar"
+    },
+    {
+      "label": "Domingo",
+      "value": "A confirmar"
+    }
+  ],
+  "plans": [
+    {
+      "name": "Plano Essencial",
+      "price": "Consultar",
+      "features": [
+        "Acesso à musculação",
+        "Avaliação inicial a confirmar",
+        "Contrato e condições a confirmar"
+      ]
+    },
+    {
+      "name": "Plano Performance",
+      "price": "Consultar",
+      "features": [
+        "Acesso a modalidades selecionadas",
+        "Acompanhamento a confirmar",
+        "Condições a confirmar"
+      ]
+    },
+    {
+      "name": "Plano Premium",
+      "price": "Consultar",
+      "features": [
+        "Acesso completo a confirmar",
+        "Benefícios extras a confirmar",
+        "Condições a confirmar"
+      ]
+    }
+  ],
+  "team": [
+    {
+      "name": "Equipe BioFit",
+      "role": "Profissional de Educação Física",
+      "image": "assets/img/photos/equipe-1.webp"
+    },
+    {
+      "name": "Equipe BioFit",
+      "role": "Instrutor(a)",
+      "image": "assets/img/photos/equipe-2.webp"
+    },
+    {
+      "name": "Equipe BioFit",
+      "role": "Acompanhamento de treino",
+      "image": "assets/img/photos/equipe-3.webp"
+    }
+  ]
+}

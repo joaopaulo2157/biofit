@@ -2,46 +2,149 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contato | Cia BioFit</title>
-<meta name="description" content="Fale com a Cia BioFit em São José da Tapera.">
-<meta name="theme-color" content="#b90f16">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<meta name="theme-color" content="#050505">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="assets/css/site.css">
+<title>Contato e Aula Experimental | Academia BioFit</title>
+<meta name="description" content="Agende uma aula experimental na Academia BioFit por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contato e Aula Experimental | Academia BioFit">
+<meta property="og:description" content="Agende uma aula experimental na Academia BioFit por WhatsApp.">
+<meta property="og:image" content="assets/img/logo-biofit.png">
+<link rel="canonical" href="./">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthClub",
+  "name": "Academia BioFit",
+  "image": "assets/img/logo-biofit.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "São José da Tapera",
+    "addressRegion": "AL",
+    "addressCountry": "BR"
+  },
+  "url": "./",
+  "sameAs": ["https://www.instagram.com/ciabiofit_sjtapera/"]
+}
+</script>
 </head>
 <body>
-<header class="site-header" data-header>
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="Cia BioFit"><img src="img/logo-biofit.svg" alt="Cia BioFit"></a>
-    <button class="nav-toggle" data-nav-toggle aria-label="Abrir menu"><span></span><span></span><span></span></button>
-    <nav class="site-nav" data-nav>
-      <a href="index.html">Início</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="modalidades.html">Modalidades</a>
-      <a href="planos.html">Planos</a>
-      <a href="estrutura.html">Estrutura</a>
-      <a href="contato.html">Contato</a>
-      <a class="nav-student" href="aluno/login.html">Área do aluno</a>
-    </nav>
-  </div>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="Academia BioFit - início">
+    <img src="assets/img/logo-biofit-menu.png" alt="Academia BioFit">
+  </a>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainMenu">
+    <span></span><span></span>
+  </button>
+  <nav class="main-menu" id="mainMenu" aria-label="Menu principal">
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="modalidades.html">Modalidades</a>
+    <a href="estrutura.html">Estrutura</a>
+    <a href="planos.html">Planos</a>
+    <a href="contato.html">Contato</a>
+    <a class="menu-cta" href="contato.html#agendar">Agendar Aula</a>
+  </nav>
 </header>
-<main>
-<section class="page-hero"><div class="container narrow reveal"><span class="section-kicker">Contato</span><h1>Fale com a BioFit.</h1><p>Primeira versão com Instagram oficial. Depois podemos inserir WhatsApp, mapa, formulário e horários definitivos.</p></div></section><section class="section"><div class="container contact-grid"><div class="contact-card reveal"><h2>Cia BioFit</h2><p>São José da Tapera - AL</p><a class="btn primary" href="https://www.instagram.com/ciabiofit_sjtapera" target="_blank" rel="noopener">Abrir Instagram</a></div><div class="contact-card reveal"><h2>Área do aluno</h2><p>Acesso ao sistema interno de treinos e avaliações.</p><a class="btn secondary" href="aluno/login.html">Entrar na área do aluno</a></div></div></section>
+<main id="conteudo">
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Contato</span>
+    <h1>Agende uma aula experimental.</h1>
+    <p>O WhatsApp e endereço completo devem ser informados para ativar conversão real.</p>
+  </div>
+</section>
+<section class="contact-section" id="agendar">
+  <div class="container contact-grid">
+    <form class="contact-form reveal" id="leadForm" novalidate>
+      <h2>Fale com a BioFit</h2>
+      <label>Nome<input type="text" name="nome" placeholder="Seu nome" autocomplete="name" required maxlength="80"></label>
+      <label>E-mail<input type="email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required maxlength="120"></label>
+      <label>WhatsApp<input type="tel" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel" required maxlength="20"></label>
+      <label>Modalidade de interesse
+        <select name="modalidade" required>
+          <option value="">Selecione</option>
+          <option>Musculação de Alta Performance</option>
+          <option>Treino Funcional & Cardio</option>
+          <option>Área Recovery & Mobilidade</option>
+          <option>Studio de Pilates/Yoga</option>
+        </select>
+      </label>
+      <label>Mensagem<textarea name="mensagem" placeholder="Conte seu objetivo" maxlength="300"></textarea></label>
+      <label class="privacy-check"><input type="checkbox" required><span>Li e aceito a Política de Privacidade.</span></label>
+      <button class="btn btn-primary" type="submit">Enviar pelo WhatsApp</button>
+      <p class="form-status" id="leadStatus" aria-live="polite"></p>
+    </form>
+    <aside class="contact-aside reveal">
+      <div class="contact-box"><strong>WhatsApp</strong><span data-config="whatsappLabel">A confirmar</span></div>
+      <div class="contact-box"><strong>Instagram</strong><a href="https://www.instagram.com/ciabiofit_sjtapera/" target="_blank" rel="noopener noreferrer">@ciabiofit_sjtapera</a></div>
+      <div class="contact-box"><strong>Localização</strong><span data-config="address">São José da Tapera - AL</span></div>
+      <div class="map-box" aria-label="Mapa conceitual da localização">
+        <div class="map-placeholder">
+          <strong>Mapa</strong>
+          <span>Inserir iframe/link do Google Maps autorizado.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
 </main>
+<a class="floating-whatsapp" id="floatingWhatsApp" href="#" rel="noopener noreferrer" aria-label="Chamar a Academia BioFit no WhatsApp">
+  <span>WhatsApp</span>
+</a>
+<button class="back-top" id="backTop" type="button" aria-label="Voltar ao topo">↑</button>
+
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
-      <img class="footer-logo" src="img/logo-biofit.svg" alt="Cia BioFit">
-      <p>Academia, musculação, acompanhamento e estrutura para uma rotina de treino mais forte.</p>
+      <img src="assets/img/logo-biofit-menu.png" alt="Academia BioFit">
+      <p>Academia BioFit em São José da Tapera - AL.</p>
     </div>
-    <div><h3>Site</h3><a href="sobre.html">Sobre</a><a href="modalidades.html">Modalidades</a><a href="planos.html">Planos</a><a href="estrutura.html">Estrutura</a></div>
-    <div><h3>Acesso</h3><a href="aluno/login.html">Área do aluno</a><a href="login.html">Administração</a><a href="https://www.instagram.com/ciabiofit_sjtapera" target="_blank" rel="noopener">Instagram</a></div>
-    <div><h3>Contato</h3><p>São José da Tapera - AL</p><a href="contato.html">Ver localização</a></div>
+    <nav aria-label="Links do rodapé">
+      <a href="sobre.html">Sobre</a>
+      <a href="modalidades.html">Modalidades</a>
+      <a href="estrutura.html">Estrutura</a>
+      <a href="planos.html">Planos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <div class="footer-legal">
+      <a href="politica-privacidade.html">Política de Privacidade</a>
+      <a href="termos.html">Termos de Uso</a>
+      <button type="button" data-open-cookie-panel>Preferências de cookies</button>
+    </div>
   </div>
-  <div class="container footer-bottom"><span>© <span data-year></span> Cia BioFit. Todos os direitos reservados.</span><span>Desenvolvido para performance, SEO e conversão.</span></div>
+  <div class="container legal-warning">
+    <p>Este site está em preparação. Informações de preços, horários, equipe, endereço completo, WhatsApp e depoimentos devem ser confirmadas pela academia antes de publicação oficial.</p>
+  </div>
 </footer>
-<script src="js/site.js"></script>
+
+<section class="cookie-panel" id="cookiePanel" aria-label="Preferências de privacidade">
+  <div class="cookie-card">
+    <div>
+      <strong>Privacidade e LGPD</strong>
+      <p>Usamos apenas recursos necessários para funcionamento desta versão. Cookies opcionais ficam desativados até autorização.</p>
+    </div>
+    <div class="cookie-options">
+      <label><input type="checkbox" checked disabled> Necessários</label>
+      <label><input type="checkbox" id="analyticsConsent"> Métricas anônimas</label>
+      <label><input type="checkbox" id="marketingConsent"> Marketing</label>
+    </div>
+    <div class="cookie-actions">
+      <button class="btn btn-outline" type="button" id="rejectCookies">Rejeitar opcionais</button>
+      <button class="btn btn-primary" type="button" id="saveCookies">Salvar preferências</button>
+    </div>
+  </div>
+</section>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

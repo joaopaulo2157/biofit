@@ -2,46 +2,134 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sobre | Cia BioFit</title>
-<meta name="description" content="Conheça a história, método e diferenciais da Cia BioFit.">
-<meta name="theme-color" content="#b90f16">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<meta name="theme-color" content="#050505">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="assets/css/site.css">
+<title>Sobre | Academia BioFit</title>
+<meta name="description" content="Conheça a proposta da Academia BioFit em São José da Tapera - AL.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sobre | Academia BioFit">
+<meta property="og:description" content="Conheça a proposta da Academia BioFit em São José da Tapera - AL.">
+<meta property="og:image" content="assets/img/logo-biofit.png">
+<link rel="canonical" href="./">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthClub",
+  "name": "Academia BioFit",
+  "image": "assets/img/logo-biofit.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "São José da Tapera",
+    "addressRegion": "AL",
+    "addressCountry": "BR"
+  },
+  "url": "./",
+  "sameAs": ["https://www.instagram.com/ciabiofit_sjtapera/"]
+}
+</script>
 </head>
 <body>
-<header class="site-header" data-header>
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="Cia BioFit"><img src="img/logo-biofit.svg" alt="Cia BioFit"></a>
-    <button class="nav-toggle" data-nav-toggle aria-label="Abrir menu"><span></span><span></span><span></span></button>
-    <nav class="site-nav" data-nav>
-      <a href="index.html">Início</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="modalidades.html">Modalidades</a>
-      <a href="planos.html">Planos</a>
-      <a href="estrutura.html">Estrutura</a>
-      <a href="contato.html">Contato</a>
-      <a class="nav-student" href="aluno/login.html">Área do aluno</a>
-    </nav>
-  </div>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="Academia BioFit - início">
+    <img src="assets/img/logo-biofit-menu.png" alt="Academia BioFit">
+  </a>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainMenu">
+    <span></span><span></span>
+  </button>
+  <nav class="main-menu" id="mainMenu" aria-label="Menu principal">
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="modalidades.html">Modalidades</a>
+    <a href="estrutura.html">Estrutura</a>
+    <a href="planos.html">Planos</a>
+    <a href="contato.html">Contato</a>
+    <a class="menu-cta" href="contato.html#agendar">Agendar Aula</a>
+  </nav>
 </header>
-<main>
-<section class="page-hero"><div class="container narrow reveal"><span class="section-kicker">Sobre a BioFit</span><h1>Uma academia para quem quer treinar com consistência.</h1><p>Esta página apresenta a BioFit de forma institucional, com espaço para história, missão, equipe e diferenciais reais da academia.</p></div></section><section class="section"><div class="container content-grid"><article class="content-card reveal"><h2>Propósito</h2><p>Oferecer um ambiente de treino organizado, acolhedor e focado em evolução física, mental e comportamental.</p></article><article class="content-card reveal"><h2>Método</h2><p>Unir avaliação, prescrição, acompanhamento e constância para ajudar o aluno a sair do improviso.</p></article><article class="content-card reveal"><h2>Atendimento</h2><p>Uma comunicação clara, com canais para novos alunos, alunos ativos e equipe administrativa.</p></article></div></section>
+<main id="conteudo">
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Sobre a BioFit</span>
+    <h1>Um espaço para treinar com propósito.</h1>
+    <p>Esta página foi preparada para receber informações institucionais reais da academia sem inventar história, campanhas ou promessas comerciais.</p>
+  </div>
+</section>
+<section class="content-section">
+  <div class="container split">
+    <div class="rich-text reveal">
+      <h2>Posicionamento visual</h2>
+      <p>A BioFit foi estruturada visualmente com preto, grafite, cinza, branco e vermelho, criando presença forte e alinhada ao universo fitness.</p>
+      <p>O conteúdo oficial deve ser inserido após confirmação da academia: história, missão, diferenciais, equipe, horários e endereço completo.</p>
+      <ul>
+        <li>Layout unificado em todas as páginas.</li>
+        <li>Menu, botões e rodapé consistentes.</li>
+        <li>Texto sem promessas fictícias.</li>
+        <li>Preparado para SEO local.</li>
+      </ul>
+    </div>
+    <div class="image-stack reveal">
+      <img src="assets/img/photos/about-1.webp" width="1400" height="980" alt="Foto da estrutura da Academia BioFit">
+      <img src="assets/img/photos/about-2.webp" width="1400" height="980" alt="Foto de alunos ou equipe da Academia BioFit">
+    </div>
+  </div>
+</section>
 </main>
+<a class="floating-whatsapp" id="floatingWhatsApp" href="#" rel="noopener noreferrer" aria-label="Chamar a Academia BioFit no WhatsApp">
+  <span>WhatsApp</span>
+</a>
+<button class="back-top" id="backTop" type="button" aria-label="Voltar ao topo">↑</button>
+
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
-      <img class="footer-logo" src="img/logo-biofit.svg" alt="Cia BioFit">
-      <p>Academia, musculação, acompanhamento e estrutura para uma rotina de treino mais forte.</p>
+      <img src="assets/img/logo-biofit-menu.png" alt="Academia BioFit">
+      <p>Academia BioFit em São José da Tapera - AL.</p>
     </div>
-    <div><h3>Site</h3><a href="sobre.html">Sobre</a><a href="modalidades.html">Modalidades</a><a href="planos.html">Planos</a><a href="estrutura.html">Estrutura</a></div>
-    <div><h3>Acesso</h3><a href="aluno/login.html">Área do aluno</a><a href="login.html">Administração</a><a href="https://www.instagram.com/ciabiofit_sjtapera" target="_blank" rel="noopener">Instagram</a></div>
-    <div><h3>Contato</h3><p>São José da Tapera - AL</p><a href="contato.html">Ver localização</a></div>
+    <nav aria-label="Links do rodapé">
+      <a href="sobre.html">Sobre</a>
+      <a href="modalidades.html">Modalidades</a>
+      <a href="estrutura.html">Estrutura</a>
+      <a href="planos.html">Planos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <div class="footer-legal">
+      <a href="politica-privacidade.html">Política de Privacidade</a>
+      <a href="termos.html">Termos de Uso</a>
+      <button type="button" data-open-cookie-panel>Preferências de cookies</button>
+    </div>
   </div>
-  <div class="container footer-bottom"><span>© <span data-year></span> Cia BioFit. Todos os direitos reservados.</span><span>Desenvolvido para performance, SEO e conversão.</span></div>
+  <div class="container legal-warning">
+    <p>Este site está em preparação. Informações de preços, horários, equipe, endereço completo, WhatsApp e depoimentos devem ser confirmadas pela academia antes de publicação oficial.</p>
+  </div>
 </footer>
-<script src="js/site.js"></script>
+
+<section class="cookie-panel" id="cookiePanel" aria-label="Preferências de privacidade">
+  <div class="cookie-card">
+    <div>
+      <strong>Privacidade e LGPD</strong>
+      <p>Usamos apenas recursos necessários para funcionamento desta versão. Cookies opcionais ficam desativados até autorização.</p>
+    </div>
+    <div class="cookie-options">
+      <label><input type="checkbox" checked disabled> Necessários</label>
+      <label><input type="checkbox" id="analyticsConsent"> Métricas anônimas</label>
+      <label><input type="checkbox" id="marketingConsent"> Marketing</label>
+    </div>
+    <div class="cookie-actions">
+      <button class="btn btn-outline" type="button" id="rejectCookies">Rejeitar opcionais</button>
+      <button class="btn btn-primary" type="button" id="saveCookies">Salvar preferências</button>
+    </div>
+  </div>
+</section>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
