@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1200" viewBox="0 0 1400 1200">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="45%" r="60%">
+      <stop offset="0" stop-color="#ff1b1b" stop-opacity=".35"/>
+      <stop offset=".55" stop-color="#ff1b1b" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#080809" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="m" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".18"/>
+      <stop offset=".45" stop-color="#ffffff" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#ff1b1b" stop-opacity=".95"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="1200" fill="none"/>
+  <circle cx="720" cy="590" r="520" fill="url(#g)"/>
+  <circle cx="710" cy="580" r="360" fill="none" stroke="#fff" stroke-opacity=".06" stroke-width="2"/>
+  <circle cx="710" cy="580" r="250" fill="none" stroke="#ff1b1b" stroke-opacity=".18" stroke-width="2"/>
+  <path d="M245 880 C410 610, 635 450, 1110 300" fill="none" stroke="url(#m)" stroke-width="8" stroke-linecap="round" opacity=".45"/>
+<g transform="translate(245 370)">
+    <rect x="230" y="235" width="520" height="70" rx="35" fill="url(#m)" opacity=".92"/>
+    <circle cx="210" cy="270" r="132" fill="none" stroke="#fff" stroke-opacity=".78" stroke-width="42"/>
+    <circle cx="790" cy="270" r="132" fill="none" stroke="#ff1b1b" stroke-opacity=".94" stroke-width="42"/>
+    <circle cx="210" cy="270" r="56" fill="none" stroke="#fff" stroke-opacity=".20" stroke-width="20"/>
+    <circle cx="790" cy="270" r="56" fill="none" stroke="#ff1b1b" stroke-opacity=".22" stroke-width="20"/>
+    <rect x="390" y="184" width="48" height="172" rx="24" fill="#fff" opacity=".75"/>
+    <rect x="548" y="184" width="48" height="172" rx="24" fill="#ff1b1b" opacity=".75"/>
+  </g><text x="700" y="1080" text-anchor="middle" fill="#fff" fill-opacity=".12" font-family="Arial, sans-serif" font-size="78" font-weight="900" letter-spacing="10">FOCO</text>
+</svg>
