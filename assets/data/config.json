@@ -1,101 +1,13 @@
 {
-  "status": "preparacao_oficial",
-  "brand": {
-    "name": "Academia BioFit",
-    "city": "São José da Tapera",
-    "state": "AL",
-    "mainHeadline": "Treine forte. Evolua todos os dias.",
-    "subHeadline": "Musculação, acompanhamento e ambiente preparado para quem busca resultado com constância."
-  },
-  "contact": {
-    "whatsapp": "",
-    "phone": "",
-    "email": "",
-    "instagram": "https://www.instagram.com/ciabiofit_sjtapera/"
-  },
-  "location": {
-    "address": "São José da Tapera - AL",
-    "mapUrl": "",
-    "mapEmbed": ""
-  },
-  "hours": [
-    {
-      "day": "Segunda a sexta",
-      "time": "A confirmar"
-    },
-    {
-      "day": "Sábado",
-      "time": "A confirmar"
-    },
-    {
-      "day": "Domingo",
-      "time": "A confirmar"
-    }
-  ],
-  "plans": [
-    {
-      "name": "Plano Essencial",
-      "price": "Consultar",
-      "highlight": false,
-      "features": [
-        "Acesso à musculação",
-        "Condição sujeita à confirmação",
-        "Plano preparado para atualização"
-      ]
-    },
-    {
-      "name": "Plano Performance",
-      "price": "Consultar",
-      "highlight": true,
-      "features": [
-        "Treino completo",
-        "Acompanhamento a confirmar",
-        "Plano mais indicado após validação"
-      ]
-    },
-    {
-      "name": "Plano Premium",
-      "price": "Consultar",
-      "highlight": false,
-      "features": [
-        "Benefícios extras a confirmar",
-        "Acesso ampliado a confirmar",
-        "Atualizar com dados oficiais"
-      ]
-    }
-  ],
-  "team": [
-    {
-      "name": "Equipe BioFit",
-      "role": "Professor(a)",
-      "image": "assets/img/photos/equipe-1.webp"
-    },
-    {
-      "name": "Equipe BioFit",
-      "role": "Instrutor(a)",
-      "image": "assets/img/photos/equipe-2.webp"
-    },
-    {
-      "name": "Equipe BioFit",
-      "role": "Acompanhamento de treino",
-      "image": "assets/img/photos/equipe-3.webp"
-    }
-  ],
-  "testimonials": [
-    {
-      "name": "Aluno(a) BioFit",
-      "text": "Depoimento autorizado será inserido aqui.",
-      "image": "assets/img/photos/depoimento-1.webp"
-    },
-    {
-      "name": "Aluno(a) BioFit",
-      "text": "Resultado real autorizado será inserido aqui.",
-      "image": "assets/img/photos/depoimento-2.webp"
-    },
-    {
-      "name": "Aluno(a) BioFit",
-      "text": "Avaliação autorizada será inserida aqui.",
-      "image": "assets/img/photos/depoimento-3.webp"
-    }
+  "brand": "Academia BioFit",
+  "instagram": "https://www.instagram.com/ciabiofit_sjtapera/",
+  "whatsapp": "",
+  "address": "São José da Tapera - AL",
+  "hours": "Horários a confirmar",
+  "mapUrl": "",
+  "photos": [
+    "https://assets-cdn.wellhub.com/images/?h=1100&su=https%3A%2F%2Fimages.partners.gympass.com%2Fimage%2Fpartners%2Fv1_ZDgbo94h6hl5cjFGC6SHyA%2Flg_36d62151-dde0-4a90-a946-df2e1eca535c_Screenshot404.png",
+    "https://assets-cdn.wellhub.com/images/?h=1100&su=https%3A%2F%2Fimages.partners.gympass.com%2Fimage%2Fpartners%2Fv1_ZDgbo94h6hl5cjFGC6SHyA%2Flg_f4d44ff6-eec4-47e4-a7ee-6fe4a9a67d19_ImagemdoWhatsAppde20241031s18.12.5859c0a801.jpg",
+    "https://assets-cdn.wellhub.com/images/?h=1100&su=https%3A%2F%2Fimages.partners.gympass.com%2Fimage%2Fpartners%2Fv1_ZDgbo94h6hl5cjFGC6SHyA%2Flg_6faf961c-b4f9-4360-9cd0-9f036a999cd9_1.png"
   ]
 }
