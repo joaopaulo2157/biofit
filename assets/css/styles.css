@@ -9,13 +9,13 @@
   --graphite:#111113;
   --graphite-2:#1b1b1f;
   --white:#f7f7f3;
-  --paper:#f3f3f3;
-  --text:#101010;
+  --paper:#0a0a0a;
+  --text:#f3f3f3;
   --muted:#6f6f6f;
   --muted-dark:#b7b7b7;
   --red:#ff1b1b;
   --red-dark:#9d0000;
-  --line:rgba(17,17,19,.13);
+  --line:rgba(255,255,255,.10);
   --line-dark:rgba(255,255,255,.13);
   --radius:20px;
   --radius-lg:30px;
@@ -249,9 +249,9 @@ button{border:0;background:transparent;cursor:pointer;color:inherit}
   --graphite:#111111;
   --graphite-2:#202020;
   --white:#ffffff;
-  --paper:#f3f3f3;
-  --text:#101010;
-  --muted:#666666;
+  --paper:#0a0a0a;
+  --text:#f3f3f3;
+  --muted:#b5b5b5;
   --muted-dark:#b7b7b7;
   --red:#ff1b1b;
   --red-dark:#9d0000;
@@ -286,19 +286,22 @@ button{border:0;background:transparent;cursor:pointer;color:inherit}
 
 .program-list,
 .plans,
-.booking,
 .blog,
 .contact,
 .testimonials{
-  background:#f3f3f3 !important;
+  background:#050505 !important;
+}
+
+.booking{
+  background:linear-gradient(180deg,#050505 0%, #1a0000 100%) !important;
 }
 
 .about{
-  background:#ffffff;
+  background:#090909;
 }
 
 .services{
-  background:#f3f3f3;
+  background:linear-gradient(180deg,#0d0d0d 0%, #190000 100%);
 }
 
 .plan,
@@ -361,4 +364,164 @@ button{border:0;background:transparent;cursor:pointer;color:inherit}
 
 .hero__visual img{
   object-position:center;
+}
+
+
+/* ==========================================================
+   BIOFIT — FUNDO PRETO COM ALTERNÂNCIAS VERMELHAS
+========================================================== */
+
+body{
+  background:#050505 !important;
+  color:#f3f3f3 !important;
+}
+
+.section-kicker,
+.eyebrow{
+  color:var(--red) !important;
+}
+
+.about,
+.program-list,
+.plans,
+.testimonials,
+.blog,
+.contact{
+  background:#070707 !important;
+  color:#f3f3f3 !important;
+}
+
+.services{
+  background:
+    radial-gradient(circle at 85% 18%, rgba(255,27,27,.18), transparent 22rem),
+    linear-gradient(180deg,#070707 0%, #130000 100%) !important;
+  color:#f3f3f3 !important;
+}
+
+.coaches{
+  background:
+    linear-gradient(180deg,#120000 0%, #050505 100%) !important;
+}
+
+.booking{
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,27,27,.12), transparent 18rem),
+    linear-gradient(180deg,#050505 0%, #160000 100%) !important;
+  color:#f3f3f3 !important;
+}
+
+.hero{
+  background:#050505 !important;
+}
+
+.stats-bar article{
+  background:#8f0000 !important;
+  color:#fff !important;
+}
+
+.stats-bar__dark{
+  background:#000 !important;
+}
+
+.about__copy p,
+.section-heading p,
+.program-list p,
+.booking p,
+.contact p,
+.check-list li,
+.contact-info a,
+.contact-info span{
+  color:#c8c8c8 !important;
+}
+
+.about h2,
+.section-heading h2,
+.program-list h2,
+.booking h2,
+.contact h2{
+  color:#ffffff !important;
+}
+
+.about__media{
+  background:linear-gradient(135deg,#2a0000 0%, #ff1b1b 100%) !important;
+}
+
+.experience-card{
+  background:#ffffff !important;
+  color:#111 !important;
+}
+
+.class-list article,
+.plan,
+.service-card,
+.booking__panel,
+.contact-card,
+.testimonial,
+.blog-card{
+  background:#0a0a0a !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.plan ul,
+.service-card p,
+.testimonial p,
+.blog-card span,
+.class-list span{
+  color:rgba(255,255,255,.72) !important;
+}
+
+.contact-info article{
+  background:#0a0a0a;
+  border:1px solid rgba(255,255,255,.08);
+  color:#fff;
+}
+
+.coach-card{
+  background:#111 !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.coach-card span{
+  color:#c9c9c9 !important;
+}
+
+.footer{
+  background:#000 !important;
+  color:#fff !important;
+}
+
+.footer p{
+  color:#c6c6c6 !important;
+}
+
+.scroll-progress{
+  background:rgba(255,255,255,.08) !important;
+}
+
+.cookie-banner{
+  background:#090909 !important;
+  border-color:rgba(255,255,255,.10) !important;
+}
+
+.modal__box{
+  background:#111 !important;
+  color:#fff !important;
+}
+
+.modal__box p,
+.modal__box li{
+  color:#d0d0d0 !important;
+}
+
+.link-arrow,
+.footer button{
+  color:#fff !important;
+}
+
+@media (max-width:780px){
+  .menu{
+    background:rgba(5,5,5,.97) !important;
+  }
 }
