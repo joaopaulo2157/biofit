@@ -338,3 +338,27 @@ button{border:0;background:transparent;cursor:pointer;color:inherit}
 .service-card:hover{
   outline-color:var(--red);
 }
+
+
+/* ==========================================================
+   BIOFIT — AJUSTE PARA FOTOS REAIS PÚBLICAS
+========================================================== */
+.hero__visual img,
+.about__media img,
+.service-card img,
+.coach-card img,
+.testimonial img,
+.blog-card img{
+  background:#111;
+  object-position:center;
+}
+
+.service-card img,
+.testimonial img,
+.blog-card img{
+  filter:saturate(1.04) contrast(1.03);
+}
+
+.hero__visual img{
+  object-position:center;
+}
