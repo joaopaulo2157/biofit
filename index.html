@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cia BioFit | Academia em São José da Tapera</title>
+  <meta name="description" content="Cia BioFit em São José da Tapera: musculação, treino de força, personal trainer, vestiário, Wi-Fi, chuveiro e uma experiência fitness intensa." />
+  <meta name="keywords" content="Cia BioFit, BioFit Academia, academia São José da Tapera, musculação, treino de força, personal trainer, academia centro" />
+  <meta name="author" content="Cia BioFit" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#ff1b1b" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cia BioFit | Corpo, mente e constância" />
+  <meta property="og:description" content="A experiência fitness da Cia BioFit em São José da Tapera." />
+  <meta property="og:image" content="img/logo-biofit.png" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/biofit-experience.css" />
+</head>
+
+<body>
+  <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__circle"></div>
+    <img src="img/logo-biofit.png" alt="" />
+    <span>BioFit Experience</span>
+  </div>
+
+  <canvas id="energyCanvas" class="energy-canvas" aria-hidden="true"></canvas>
+
+  <header class="header" id="header">
+    <a href="#inicio" class="brand" aria-label="Início Cia BioFit">
+      <img src="img/logo-biofit-menu.png" alt="Cia BioFit" />
+    </a>
+
+    <button class="menu-button" id="menuButton" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="#experiencia">Experiência</a>
+      <a href="#biofit">BioFit</a>
+      <a href="#modalidades">Modalidades</a>
+      <a href="#estrutura">Estrutura</a>
+      <a href="#horarios">Horários</a>
+      <a href="#contato">Contato</a>
+      <a class="nav__ghost" href="login.html">Admin</a>
+      <a class="nav__cta" href="aluno/login.html">Área do aluno</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" data-scene="hero">
+      <div class="hero__scan"></div>
+      <div class="hero__rings" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="eyebrow reveal">CIA BIOFIT · SÃO JOSÉ DA TAPERA</span>
+          <h1 class="hero__title reveal">
+            Não é sobre treinar.
+            <strong>É sobre virar a chave.</strong>
+          </h1>
+          <p class="hero__text reveal">
+            Uma academia completa para quem busca força, constância e acompanhamento.
+            Musculação, treino de força e uma equipe pronta para ajudar você a evoluir.
+          </p>
+
+          <div class="hero__actions reveal">
+            <a class="btn btn--primary" href="https://www.instagram.com/ciabiofit_sjtapera" target="_blank" rel="noopener">
+              <span>ver Instagram</span>
+              <i>↗</i>
+            </a>
+            <a class="btn btn--line" href="#experiencia">
+              <span>entrar na experiência</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="bio-core reveal" aria-label="Identidade visual BioFit">
+          <div class="bio-core__halo"></div>
+          <div class="bio-core__panel">
+            <img src="img/logo-biofit.png" alt="Cia BioFit" />
+            <div class="bio-core__pulse"></div>
+          </div>
+          <div class="floating-tag floating-tag--one">
+            <strong>05:00</strong>
+            <span>comece cedo</span>
+          </div>
+          <div class="floating-tag floating-tag--two">
+            <strong>FORÇA</strong>
+            <span>treino de força</span>
+          </div>
+          <div class="floating-tag floating-tag--three">
+            <strong>Wi‑Fi</strong>
+            <span>estrutura completa</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#experiencia" class="scroll-indicator" aria-label="Rolar para experiência">
+        <span>role</span>
+        <i></i>
+      </a>
+    </section>
+
+    <section class="experience" id="experiencia" data-scene="experience">
+      <div class="container experience__grid">
+        <div class="chapter reveal">
+          <span>CAPÍTULO 01</span>
+          <h2>A academia como uma experiência.</h2>
+        </div>
+
+        <div class="experience__cards">
+          <article class="exp-card reveal">
+            <span>ambiente</span>
+            <h3>Você sente a energia antes de tocar no peso.</h3>
+            <p>O site agora apresenta a BioFit com uma linguagem visual própria: escura, vermelha, intensa e tecnológica.</p>
+          </article>
+
+          <article class="exp-card reveal">
+            <span>rotina</span>
+            <h3>Aberta cedo, pronta para encaixar no seu dia.</h3>
+            <p>A BioFit possui horários amplos durante a semana, começando às 05:00, facilitando o treino antes ou depois da rotina.</p>
+          </article>
+
+          <article class="exp-card reveal">
+            <span>evolução</span>
+            <h3>Força, constância e acompanhamento.</h3>
+            <p>Musculação, treino de força e estrutura pensada para quem quer sair do improviso e treinar com direção.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="biofit-strip" id="biofit" data-scene="strip">
+      <div class="strip-track" aria-hidden="true">
+        <span>BIOFIT</span><span>FORÇA</span><span>FOCO</span><span>CONSTÂNCIA</span><span>EVOLUÇÃO</span>
+        <span>BIOFIT</span><span>FORÇA</span><span>FOCO</span><span>CONSTÂNCIA</span><span>EVOLUÇÃO</span>
+      </div>
+
+      <div class="container strip-content reveal">
+        <span class="eyebrow">BIO SCAN</span>
+        <h2>O corpo responde quando o ambiente exige mais.</h2>
+        <p>
+          Localizada no Centro de São José da Tapera, a Cia BioFit aparece como uma opção completa para quem procura academia,
+          musculação e treino de força com estrutura de apoio para o aluno.
+        </p>
+      </div>
+    </section>
+
+    <section class="modalities" id="modalidades" data-scene="modalities">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">MODALIDADES</span>
+          <h2>Escolha sua frequência. A BioFit entrega o ambiente.</h2>
+        </div>
+
+        <div class="mode-system">
+          <button class="mode-card reveal active" data-title="Musculação" data-subtitle="Força progressiva" data-copy="Equipamentos, pesos livres e acompanhamento para construir evolução real com segurança.">
+            <span>01</span>
+            <strong>Musculação</strong>
+            <small>força progressiva</small>
+          </button>
+
+          <button class="mode-card reveal" data-title="Treino de força" data-subtitle="Controle e intensidade" data-copy="Treinos voltados para ganho de força, técnica, resistência muscular e disciplina.">
+            <span>02</span>
+            <strong>Treino de força</strong>
+            <small>controle e intensidade</small>
+          </button>
+
+          <button class="mode-card reveal" data-title="Personal trainer" data-subtitle="Direção individual" data-copy="Apoio profissional para quem precisa de ajuste, acompanhamento e estratégia no treino.">
+            <span>03</span>
+            <strong>Personal trainer</strong>
+            <small>direção individual</small>
+          </button>
+
+          <button class="mode-card reveal" data-title="Condicionamento" data-subtitle="Rotina ativa" data-copy="Estrutura para quem quer mais energia, saúde, mobilidade e constância semanal.">
+            <span>04</span>
+            <strong>Condicionamento</strong>
+            <small>rotina ativa</small>
+          </button>
+
+          <aside class="mode-display reveal">
+            <span id="modeSubtitle">Força progressiva</span>
+            <h3 id="modeTitle">Musculação</h3>
+            <p id="modeCopy">Equipamentos, pesos livres e acompanhamento para construir evolução real com segurança.</p>
+            <a href="https://www.instagram.com/ciabiofit_sjtapera" target="_blank" rel="noopener">conhecer no Instagram</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="structure" id="estrutura" data-scene="structure">
+      <div class="container structure__grid">
+        <div class="section-head reveal">
+          <span class="eyebrow">ESTRUTURA</span>
+          <h2>Detalhes que fazem o aluno permanecer.</h2>
+          <p>Itens públicos encontrados para a Cia BioFit foram transformados em uma seção visual, objetiva e comercial.</p>
+        </div>
+
+        <div class="amenities">
+          <article class="amenity reveal">
+            <i>▣</i>
+            <strong>Armários</strong>
+            <span>praticidade para o aluno</span>
+          </article>
+          <article class="amenity reveal">
+            <i>◍</i>
+            <strong>Chuveiro</strong>
+            <span>mais conforto no dia a dia</span>
+          </article>
+          <article class="amenity reveal">
+            <i>⌁</i>
+            <strong>Vestiário</strong>
+            <span>estrutura de apoio</span>
+          </article>
+          <article class="amenity reveal">
+            <i>◎</i>
+            <strong>Wi‑Fi</strong>
+            <span>conectividade no treino</span>
+          </article>
+          <article class="amenity reveal">
+            <i>✦</i>
+            <strong>Personal</strong>
+            <span>orientação profissional</span>
+          </article>
+          <article class="amenity reveal">
+            <i>✚</i>
+            <strong>Higiene</strong>
+            <span>itens de higiene pessoal</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="hours" id="horarios" data-scene="hours">
+      <div class="container hours__box reveal">
+        <div>
+          <span class="eyebrow">HORÁRIOS</span>
+          <h2>Treine no ritmo da sua semana.</h2>
+          <p>Horários iniciais com base nas informações públicas disponíveis. Podem ser ajustados depois caso a academia envie a grade oficial.</p>
+        </div>
+
+        <div class="hours__list">
+          <div><span>Segunda a Quinta</span><strong>05:00 - 22:00</strong></div>
+          <div><span>Sexta</span><strong>05:00 - 21:00</strong></div>
+          <div><span>Sábado</span><strong>06:00 - 12:00 · 15:00 - 19:00</strong></div>
+          <div><span>Domingo</span><strong>09:00 - 12:00</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="plans" id="planos" data-scene="plans">
+      <div class="container plans__grid">
+        <div class="section-head reveal">
+          <span class="eyebrow">PLANOS</span>
+          <h2>Planos editáveis para fechar depois.</h2>
+          <p>Deixei nomes e valores preparados para ajustar quando você tiver as informações comerciais definitivas da BioFit.</p>
+        </div>
+
+        <div class="plan-machine reveal">
+          <div class="plan-screen">
+            <span id="planLabel">START</span>
+            <h3 id="planTitle">Plano Start</h3>
+            <p id="planText">Entrada ideal para quem quer criar rotina e começar com consistência.</p>
+            <strong id="planPrice">Consultar</strong>
+          </div>
+
+          <div class="plan-buttons" role="tablist" aria-label="Selecionar plano">
+            <button class="active" data-plan="Start" data-copy="Entrada ideal para quem quer criar rotina e começar com consistência." data-price="Consultar">Start</button>
+            <button data-plan="Fit" data-copy="Mais frequência, mais energia e mais presença semanal." data-price="Consultar">Fit</button>
+            <button data-plan="Pro" data-copy="Acompanhamento, intensidade e foco em evolução contínua." data-price="Consultar">Pro</button>
+            <button data-plan="Elite" data-copy="Experiência premium para quem quer prioridade e alta performance." data-price="Consultar">Elite</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" data-scene="proof">
+      <div class="container proof__grid">
+        <article class="proof-card reveal">
+          <strong data-counter="53">0</strong>
+          <span>avaliações públicas</span>
+        </article>
+        <article class="proof-card reveal">
+          <strong data-counter="4.91">0</strong>
+          <span>nota pública no Wellhub</span>
+        </article>
+        <article class="proof-card reveal">
+          <strong data-counter="150">0</strong>
+          <span>metros da Prefeitura</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contato" data-scene="contact">
+      <div class="container contact__panel reveal">
+        <div>
+          <span class="eyebrow">CONTATO</span>
+          <h2>BioFit no Centro de São José da Tapera.</h2>
+          <p>
+            Endereço usado nesta primeira versão: R. José Pereira Alves, Centro,
+            São José da Tapera - AL. Para evitar erro de contato, deixei o botão principal apontando para o Instagram oficial informado.
+          </p>
+        </div>
+
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="https://www.instagram.com/ciabiofit_sjtapera" target="_blank" rel="noopener">
+            <span>falar pelo Instagram</span>
+            <i>↗</i>
+          </a>
+          <a class="btn btn--line" href="aluno/login.html">área do aluno</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <img src="img/logo-biofit-menu.png" alt="Cia BioFit" />
+      <p>Cia BioFit © <span id="year"></span>. São José da Tapera - AL.</p>
+      <div>
+        <a href="login.html">Admin</a>
+        <a href="aluno/login.html">Aluno</a>
+        <a href="https://www.instagram.com/ciabiofit_sjtapera" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/biofit-experience.js"></script>
+</body>
+</html>
