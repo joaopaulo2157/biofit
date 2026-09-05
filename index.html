@@ -2,16 +2,19 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Academia BioFit | Conceito Fitness Experience</title>
-  <meta name="description" content="Projeto conceitual de site para Academia BioFit: experiência digital com storytelling por scroll, alta performance, bem-estar e estética premium." />
+  <title>Academia BioFit | Conceito Fitness Premium</title>
+  <meta name="description" content="Site conceitual de academia boutique premium com foco em treino, força, wellness, experiência visual e apresentação de portfólio." />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#070708" />
+  <meta name="theme-color" content="#080808" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Academia BioFit | Conceito Fitness Experience" />
-  <meta property="og:description" content="Site conceitual para apresentação de portfólio, com storytelling por scroll e estética fitness premium." />
+  <meta property="og:title" content="Academia BioFit | Conceito Fitness Premium" />
+  <meta property="og:description" content="Projeto conceitual desenvolvido para fins educacionais e portfólio." />
   <meta property="og:image" content="assets/img/logo-biofit.png" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
@@ -19,290 +22,339 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-
 <body>
-  <a class="skip-link" href="#modalidades">Pular para modalidades</a>
+  <a class="skip-link" href="#programas">Pular para o conteúdo</a>
 
-  <div class="page-progress" aria-hidden="true">
-    <span id="pageProgress"></span>
-  </div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
 
-  <button class="back-to-top" id="backToTop" type="button" aria-label="Voltar ao topo">
-    ↑
-  </button>
-
-  <aside class="story-rail" aria-label="Progresso da narrativa">
-    <a href="#inicio" data-section-link="inicio"><span></span><strong>Início</strong></a>
-    <a href="#modalidades" data-section-link="modalidades"><span></span><strong>Pilares</strong></a>
-    <a href="#ecossistema" data-section-link="ecossistema"><span></span><strong>Ecossistema</strong></a>
-    <a href="#conceito" data-section-link="conceito"><span></span><strong>Conceito</strong></a>
-    <a href="#agendar" data-section-link="agendar"><span></span><strong>Tour</strong></a>
-  </aside>
-
-  <header class="site-header" id="siteHeader">
-    <a class="brand" href="#inicio" aria-label="Academia BioFit - início">
-      <img src="assets/img/logo-biofit-header.png" alt="Academia BioFit" />
+  <header class="header" id="header">
+    <a class="brand" href="#inicio" aria-label="Academia BioFit">
+      <img src="assets/img/logo-biofit-menu.png" alt="Academia BioFit" />
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainMenu">
-      <span></span>
-      <span></span>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
+      <span></span><span></span>
     </button>
 
-    <nav class="main-menu" id="mainMenu" aria-label="Menu principal">
-      <a href="#modalidades">Modalidades</a>
-      <a href="#conceito">Sobre o Conceito</a>
-      <a href="#agendar">Agendar Visita</a>
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#programas">Programas</a>
+      <a href="#planos">Planos</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#contato">Contato</a>
+      <a class="menu__cta" href="#agendar">Agendar</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero" id="inicio" aria-labelledby="heroTitle">
-      <div class="hero__light hero__light--one"></div>
-      <div class="hero__light hero__light--two"></div>
-
-      <div class="hero__content">
-        <img class="hero__logo" src="assets/img/logo-biofit.png" alt="Academia BioFit" />
-        <p class="hero__kicker">Fitness Experience · Projeto Conceitual</p>
-        <h1 id="heroTitle">Redefina seus limites</h1>
-        <p class="hero__lead">
-          Uma narrativa digital sobre performance, bem-estar e disciplina.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button button--primary magnetic" href="#modalidades">Explorar pilares</a>
-          <a class="button button--secondary magnetic" href="#agendar">Agendar visita</a>
-        </div>
-      </div>
-
-      <a class="scroll-cue" href="#modalidades" aria-label="Rolar para modalidades">
-        <span>explorar</span>
-        <i></i>
-      </a>
-    </section>
-
-    <section class="intro" aria-label="Introdução do conceito">
-      <div class="container intro__grid">
-        <p class="section-label reveal">Storytelling por scroll</p>
-        <div class="intro__text reveal">
-          <h2>Uma academia não precisa ser apresentada como catálogo.</h2>
+  <main id="inicio">
+    <section class="hero section-observe" aria-labelledby="heroTitle">
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+          <span class="eyebrow">Academia boutique · conceito premium</span>
+          <h1 id="heroTitle">Sinta mais força no corpo e mais clareza na mente.</h1>
           <p>
-            Neste conceito, cada área de treino vira um capítulo visual. O usuário desce a página e sente a transição entre força, suor, recuperação e equilíbrio.
+            Uma experiência digital conceitual para apresentar a BioFit como uma academia moderna, energética e sofisticada.
           </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#programas">Ver programas</a>
+            <a class="btn btn--light" href="#agendar">Agendar visita</a>
+          </div>
+
+          <div class="hero__social">
+            <strong>10K+</strong>
+            <span>comunidade fitness conceitual</span>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal">
+          <img src="assets/img/photos/hero.jpg" alt="Imagem conceitual da Academia BioFit" />
+          <div class="tag tag--top">Clean space</div>
+          <div class="tag tag--mid">Pro trainer</div>
+          <div class="tag tag--bottom">Nutrition tips</div>
+        </div>
+      </div>
+
+      <div class="stats-bar container reveal">
+        <article><strong>85%</strong><span>energia visual</span></article>
+        <article><strong>99%</strong><span>layout responsivo</span></article>
+        <article><strong>LGPD</strong><span>cookies e privacidade</span></article>
+        <article class="stats-bar__dark"><strong>DESIGN PROFISSIONAL</strong><span>feito para academia</span></article>
+      </div>
+    </section>
+
+    <section class="about section-observe" id="sobre">
+      <div class="container about__grid">
+        <div class="about__copy reveal">
+          <span class="section-kicker">Sobre o conceito</span>
+          <h2>Sua parceira em força, energia e bem-estar.</h2>
+          <p>
+            A BioFit foi tratada aqui como uma marca conceitual de academia premium: visual limpo, navegação clara, seções comerciais completas e uma experiência que não parece template.
+          </p>
+
+          <ul class="check-list">
+            <li>Design institucional com cara de academia real.</li>
+            <li>Experiência visual inspirada em alto desempenho.</li>
+            <li>Base pronta para receber fotos oficiais da BioFit.</li>
+          </ul>
+
+          <a class="link-arrow" href="#programas">Conhecer programas</a>
+        </div>
+
+        <div class="about__media reveal">
+          <img src="assets/img/photos/about-1.jpg" alt="Imagem conceitual de treino na BioFit" />
+          <img src="assets/img/photos/about-2.jpg" alt="Imagem conceitual de comunidade na BioFit" />
+          <div class="experience-card">
+            <strong>15+</strong>
+            <span>anos de experiência visual no conceito</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="pillar-stage" id="modalidades" aria-label="Pilares de treino">
-      <article class="pillar pillar--strength" data-pillar data-story="Heavy Strength">
-        <div class="pillar__bg-word">Strength</div>
-        <div class="container pillar__grid">
-          <div class="pillar__copy reveal">
-            <span class="chapter">01 · Heavy Strength</span>
-            <h2>Musculação de Alta Performance</h2>
-            <p>
-              A força bruta encontra a precisão. Uma atmosfera criada para concentração, carga progressiva e evolução física consistente.
-            </p>
-            <button class="micro-action" data-open-modal="strength">Ver sensação do pilar</button>
-          </div>
-
-          <figure class="pillar__visual reveal" aria-label="Representação visual de musculação">
-            <img src="assets/img/pilares/musculacao.svg" alt="Equipamento e anilhas representando musculação de alta performance" />
-            <figcaption>força · controle · intensidade</figcaption>
-          </figure>
-        </div>
-      </article>
-
-      <article class="pillar pillar--engine" data-pillar data-story="Engine & Sweat">
-        <div class="pillar__bg-word">Engine</div>
-        <div class="container pillar__grid pillar__grid--reverse">
-          <figure class="pillar__visual reveal" aria-label="Representação visual de treino funcional e cardio">
-            <img src="assets/img/pilares/funcional-cardio.svg" alt="Corda e linhas de movimento representando funcional e cardio" />
-            <figcaption>ritmo · suor · energia</figcaption>
-          </figure>
-
-          <div class="pillar__copy reveal">
-            <span class="chapter">02 · Engine & Sweat</span>
-            <h2>Treino Funcional & Cardio</h2>
-            <p>
-              Movimento que acelera o corpo e limpa a mente. Um pilar para potência, condicionamento e resistência emocional.
-            </p>
-            <button class="micro-action" data-open-modal="engine">Ver sensação do pilar</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="pillar pillar--recovery" data-pillar data-story="Reset & Heal">
-        <div class="pillar__bg-word">Reset</div>
-        <div class="container pillar__grid">
-          <div class="pillar__copy reveal">
-            <span class="chapter">03 · Reset & Heal</span>
-            <h2>Área Recovery & Mobilidade</h2>
-            <p>
-              A evolução também acontece no cuidado. Respiração, mobilidade e recuperação para manter o corpo pronto para o próximo desafio.
-            </p>
-            <button class="micro-action" data-open-modal="recovery">Ver sensação do pilar</button>
-          </div>
-
-          <figure class="pillar__visual reveal" aria-label="Representação visual de recovery e mobilidade">
-            <img src="assets/img/pilares/recovery.svg" alt="Rolo e linhas suaves representando recuperação e mobilidade" />
-            <figcaption>reset · mobilidade · reparo</figcaption>
-          </figure>
-        </div>
-      </article>
-
-      <article class="pillar pillar--mind" data-pillar data-story="Core & Mind">
-        <div class="pillar__bg-word">Core</div>
-        <div class="container pillar__grid pillar__grid--reverse">
-          <figure class="pillar__visual reveal" aria-label="Representação visual de pilates e yoga">
-            <img src="assets/img/pilares/pilates-yoga.svg" alt="Figura abstrata representando pilates e yoga" />
-            <figcaption>centro · respiração · presença</figcaption>
-          </figure>
-
-          <div class="pillar__copy reveal">
-            <span class="chapter">04 · Core & Mind</span>
-            <h2>Studio de Pilates/Yoga</h2>
-            <p>
-              Força silenciosa, postura e consciência corporal. Um espaço para alinhar performance, mente e bem-estar.
-            </p>
-            <button class="micro-action" data-open-modal="mind">Ver sensação do pilar</button>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <section class="ecosystem" id="ecossistema" aria-labelledby="ecosystemTitle">
-      <div class="ecosystem__watermark">Evolução Constante</div>
-
-      <div class="container">
-        <div class="section-heading reveal">
-          <span>Ecossistema de treino</span>
-          <h2 id="ecosystemTitle">Quatro pilares. Uma única jornada.</h2>
-        </div>
-
-        <div class="filter-tabs reveal" role="tablist" aria-label="Filtrar pilares">
-          <button class="is-active" type="button" data-filter="all">Todos</button>
-          <button type="button" data-filter="performance">Performance</button>
-          <button type="button" data-filter="wellness">Wellness</button>
-        </div>
-
-        <div class="ecosystem__grid" id="ecosystemGrid">
-          <article class="ecosystem-card reveal" data-category="performance" tabindex="0">
-            <img src="assets/img/pilares/musculacao.svg" alt="" />
-            <h3>Heavy Strength</h3>
-            <p>Construção de força, técnica e foco.</p>
-          </article>
-
-          <article class="ecosystem-card reveal" data-category="performance" tabindex="0">
-            <img src="assets/img/pilares/funcional-cardio.svg" alt="" />
-            <h3>Engine & Sweat</h3>
-            <p>Condicionamento, ritmo e resistência.</p>
-          </article>
-
-          <article class="ecosystem-card reveal" data-category="wellness" tabindex="0">
-            <img src="assets/img/pilares/recovery.svg" alt="" />
-            <h3>Reset & Heal</h3>
-            <p>Mobilidade, cuidado e recuperação.</p>
-          </article>
-
-          <article class="ecosystem-card reveal" data-category="wellness" tabindex="0">
-            <img src="assets/img/pilares/pilates-yoga.svg" alt="" />
-            <h3>Core & Mind</h3>
-            <p>Consciência corporal e equilíbrio.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="lifestyle" id="conceito" aria-labelledby="conceptTitle">
-      <div class="container lifestyle__intro reveal">
-        <span class="section-label">Ritual diário</span>
-        <h2 id="conceptTitle">Mais do que um espaço de treino. Um ritual de superação.</h2>
+    <section class="services section-observe" id="programas">
+      <div class="container section-heading reveal">
+        <span class="section-kicker">Programas principais</span>
+        <h2>Seu recurso para treinos consistentes e efetivos.</h2>
       </div>
 
-      <div class="container lifestyle__grid">
-        <article class="lifestyle-card lifestyle-card--large reveal">
-          <figure>
-            <img src="assets/img/pilares/lifestyle-foco.svg" alt="Imagem conceitual de atleta em momento de foco antes do treino" />
-          </figure>
+      <div class="container service-grid">
+        <article class="service-card reveal">
+          <img src="assets/img/photos/classe-musculacao.jpg" alt="Musculação de alta performance" />
           <div>
-            <span>Antes da série</span>
-            <h3>O silêncio que antecede o esforço.</h3>
+            <h3>Musculação de Alta Performance</h3>
+            <p>Força, carga progressiva e foco total para evolução física.</p>
           </div>
+          <button class="round-btn" data-modal="musculacao" aria-label="Ver detalhes de musculação">↗</button>
         </article>
 
-        <article class="lifestyle-card reveal">
-          <figure>
-            <img src="assets/img/pilares/lifestyle-comunidade.svg" alt="Imagem conceitual de comunidade e energia positiva após o treino" />
-          </figure>
+        <article class="service-card reveal">
+          <img src="assets/img/photos/classe-funcional.jpg" alt="Treino funcional e cardio" />
           <div>
-            <span>Depois do treino</span>
-            <h3>A energia de pertencer a algo maior.</h3>
+            <h3>Treino Funcional & Cardio</h3>
+            <p>Movimento, suor e condicionamento para ativar o corpo.</p>
           </div>
+          <button class="round-btn" data-modal="funcional" aria-label="Ver detalhes de funcional e cardio">↗</button>
+        </article>
+
+        <article class="service-card reveal">
+          <img src="assets/img/photos/classe-recovery.jpg" alt="Área recovery e mobilidade" />
+          <div>
+            <h3>Área Recovery & Mobilidade</h3>
+            <p>Respiração, cuidado e recuperação para manter constância.</p>
+          </div>
+          <button class="round-btn" data-modal="recovery" aria-label="Ver detalhes de recovery">↗</button>
+        </article>
+
+        <article class="service-card reveal">
+          <img src="assets/img/photos/classe-pilates.jpg" alt="Studio de pilates e yoga" />
+          <div>
+            <h3>Studio de Pilates/Yoga</h3>
+            <p>Postura, consciência corporal e equilíbrio entre corpo e mente.</p>
+          </div>
+          <button class="round-btn" data-modal="pilates" aria-label="Ver detalhes de pilates e yoga">↗</button>
         </article>
       </div>
     </section>
 
-    <section class="cta" id="agendar" aria-labelledby="ctaTitle">
-      <div class="container cta__panel reveal">
-        <span>Tour conceitual</span>
-        <h2 id="ctaTitle">Vivencie a experiência BioFit.</h2>
-        <p>
-          Este CTA é fictício e faz parte da apresentação de portfólio. Ele pode futuramente receber formulário, WhatsApp ou integração real.
-        </p>
+    <section class="program-list section-observe">
+      <div class="container program-list__grid">
+        <div class="program-list__intro reveal">
+          <span class="section-kicker">Agenda conceitual</span>
+          <h2>Programas flexíveis para cada jornada fitness.</h2>
+          <p>
+            Bloco visual inspirado em sites profissionais de academia. Os horários e valores abaixo são fictícios para apresentação.
+          </p>
+          <a class="btn btn--primary" href="#agendar">Agendar agora</a>
+        </div>
 
-        <form class="concept-form" id="conceptForm" aria-label="Formulário conceitual de agendamento">
-          <label>
-            Nome
-            <input type="text" name="nome" placeholder="Seu nome" autocomplete="name" />
+        <div class="class-list reveal">
+          <article><strong>01</strong><div><h3>Body Building Session</h3><span>Segunda a Quinta · 10:00 às 12:00</span></div><a href="#agendar">Entrar</a></article>
+          <article><strong>02</strong><div><h3>Weight Lifting Session</h3><span>Segunda a Sábado · 09:00 às 12:00</span></div><a href="#agendar">Entrar</a></article>
+          <article><strong>03</strong><div><h3>Fitness Running Program</h3><span>Segunda a Sexta · 06:00 às 07:00</span></div><a href="#agendar">Entrar</a></article>
+          <article><strong>04</strong><div><h3>Classic Yoga & Zumba</h3><span>Sábados · 08:00 às 10:00</span></div><a href="#agendar">Entrar</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="plans section-observe" id="planos">
+      <div class="container section-heading reveal">
+        <span class="section-kicker">Planos conceituais</span>
+        <h2>Planos flexíveis para cada jornada.</h2>
+        <p>Valores fictícios. Substituir pelos planos reais somente com autorização da academia.</p>
+      </div>
+
+      <div class="container plans-grid">
+        <article class="plan reveal">
+          <span>Basic Plan</span>
+          <h3>Essencial</h3>
+          <strong>Consultar</strong>
+          <ul>
+            <li>Acesso à musculação</li>
+            <li>Suporte inicial</li>
+            <li>Rotina de treino conceitual</li>
+          </ul>
+          <a href="#agendar">Começar</a>
+        </article>
+
+        <article class="plan plan--featured reveal">
+          <span>Standard Plan</span>
+          <h3>Performance</h3>
+          <strong>Consultar</strong>
+          <ul>
+            <li>Treino completo</li>
+            <li>Acompanhamento conceitual</li>
+            <li>Funcional/Cardio</li>
+          </ul>
+          <a href="#agendar">Começar</a>
+        </article>
+
+        <article class="plan reveal">
+          <span>Premium Plan</span>
+          <h3>Elite</h3>
+          <strong>Consultar</strong>
+          <ul>
+            <li>Todos os pilares</li>
+            <li>Recovery e mobilidade</li>
+            <li>Experiência premium</li>
+          </ul>
+          <a href="#agendar">Começar</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="coaches section-observe" id="equipe">
+      <div class="container section-heading section-heading--center reveal">
+        <span class="section-kicker">Equipe qualificada</span>
+        <h2>Seu progresso começa com grandes profissionais.</h2>
+      </div>
+
+      <div class="container coach-grid">
+        <article class="coach-card reveal"><img src="assets/img/photos/coach-1.jpg" alt="Professor BioFit 01"><h3>Instrutor(a) BioFit</h3><span>Personal Trainer</span></article>
+        <article class="coach-card reveal"><img src="assets/img/photos/coach-2.jpg" alt="Professor BioFit 02"><h3>Instrutor(a) BioFit</h3><span>Funcional & Cardio</span></article>
+        <article class="coach-card reveal"><img src="assets/img/photos/coach-3.jpg" alt="Professor BioFit 03"><h3>Instrutor(a) BioFit</h3><span>Força & Performance</span></article>
+      </div>
+    </section>
+
+    <section class="booking section-observe" id="agendar">
+      <div class="container booking__panel reveal">
+        <div>
+          <span class="section-kicker">Comece sua jornada</span>
+          <h2>Agende uma sessão gratuita com nosso treinador.</h2>
+        </div>
+
+        <form class="booking-form" id="bookingForm">
+          <input type="text" name="nome" placeholder="Seu nome" autocomplete="name" required maxlength="80" />
+          <input type="email" name="email" placeholder="Seu e-mail" autocomplete="email" required maxlength="120" />
+          <textarea name="mensagem" placeholder="Conte seu objetivo" maxlength="300"></textarea>
+          <label class="privacy-check">
+            <input type="checkbox" required />
+            <span>Li e aceito a Política de Privacidade conceitual.</span>
           </label>
-          <label>
-            Objetivo
-            <select name="objetivo">
-              <option value="">Escolha um objetivo</option>
-              <option>Ganhar força</option>
-              <option>Melhorar condicionamento</option>
-              <option>Recuperar mobilidade</option>
-              <option>Equilíbrio e bem-estar</option>
-            </select>
-          </label>
-          <button class="button button--primary magnetic" type="submit">
-            Agendar Treino Experimental (Conceito)
-          </button>
-          <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+          <button class="btn btn--primary" type="submit">Agendar Treino Experimental (Conceito)</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
+      </div>
+    </section>
+
+    <section class="testimonials section-observe">
+      <div class="container testimonials__grid">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Depoimentos conceituais</span>
+          <h2>Confiança, progresso e energia comprovada.</h2>
+        </div>
+
+        <div class="testimonial-cards">
+          <article class="testimonial reveal"><img src="assets/img/photos/testimonial-1.jpg" alt=""><p>“Um conceito visual que transmite disciplina, energia e vontade de treinar.”</p><strong>Aluno conceitual</strong></article>
+          <article class="testimonial reveal"><img src="assets/img/photos/testimonial-2.jpg" alt=""><p>“A experiência parece uma academia boutique, moderna e bem posicionada.”</p><strong>Visitante conceitual</strong></article>
+          <article class="testimonial reveal"><img src="assets/img/photos/testimonial-3.jpg" alt=""><p>“O site comunica performance sem perder limpeza e profissionalismo.”</p><strong>Cliente conceitual</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog section-observe">
+      <div class="container section-heading section-heading--center reveal">
+        <span class="section-kicker">Conteúdo visual</span>
+        <h2>Conselhos inteligentes para uma vida mais forte.</h2>
+      </div>
+
+      <div class="container blog-grid">
+        <article class="blog-card reveal"><img src="assets/img/photos/blog-1.jpg" alt=""><h3>Redefinindo a experiência fitness</h3><span>Portfólio · Conceito</span></article>
+        <article class="blog-card reveal"><img src="assets/img/photos/blog-2.jpg" alt=""><h3>Onde força encontra serenidade</h3><span>Wellness · Conceito</span></article>
+        <article class="blog-card reveal"><img src="assets/img/photos/blog-3.jpg" alt=""><h3>Mais forte a cada dia</h3><span>Performance · Conceito</span></article>
+      </div>
+    </section>
+
+    <section class="contact section-observe" id="contato">
+      <div class="container contact__grid">
+        <div class="contact-card reveal">
+          <h2>Contato conceitual</h2>
+          <p>Este projeto não publica telefone, endereço oficial, valores ou dados institucionais reais sem autorização.</p>
+          <a class="btn btn--primary" href="#agendar">Agendar visita</a>
+        </div>
+        <div class="contact-info reveal">
+          <article><strong>Acesso rápido</strong><a href="#sobre">Sobre</a><a href="#programas">Programas</a><a href="#planos">Planos</a></article>
+          <article><strong>Horários</strong><span>Adicionar horários oficiais autorizados</span></article>
+          <article><strong>Localização</strong><span>Adicionar endereço oficial autorizado</span></article>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container site-footer__grid">
-      <img src="assets/img/logo-biofit-header.png" alt="Academia BioFit" />
+  <footer class="footer">
+    <div class="container footer__grid">
+      <img src="assets/img/logo-biofit-menu.png" alt="Academia BioFit">
       <p>
         Este é um projeto conceitual desenvolvido exclusivamente para fins educacionais e apresentação de portfólio.
         Este site não é oficial, não possui vínculo com academias comerciais e não tem finalidade financeira.
       </p>
+      <button type="button" data-open-privacy>Política de Privacidade</button>
     </div>
   </footer>
 
-  <div class="modal" id="pillarModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Aviso de privacidade">
+    <div>
+      <strong>Privacidade e LGPD</strong>
+      <p>Usamos apenas recursos necessários para funcionamento da página. Nenhum cookie de marketing é ativado nesta versão conceitual.</p>
+    </div>
+    <div class="cookie-actions">
+      <button type="button" class="btn btn--light" data-open-privacy>Ver política</button>
+      <button type="button" class="btn btn--primary" id="acceptCookies">Entendi</button>
+    </div>
+  </div>
+
+  <div class="modal" id="infoModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
     <div class="modal__overlay" data-close-modal></div>
-    <div class="modal__content" role="document">
+    <div class="modal__box">
       <button class="modal__close" type="button" data-close-modal aria-label="Fechar">×</button>
-      <span id="modalKicker">Pilar BioFit</span>
-      <h2 id="modalTitle">Experiência do pilar</h2>
+      <span id="modalKicker">BioFit</span>
+      <h2 id="modalTitle">Pilar de treino</h2>
       <p id="modalText"></p>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="privacyTitle">
+    <div class="modal__overlay" data-close-privacy></div>
+    <div class="modal__box modal__box--privacy">
+      <button class="modal__close" type="button" data-close-privacy aria-label="Fechar">×</button>
+      <span>LGPD</span>
+      <h2 id="privacyTitle">Política de Privacidade Conceitual</h2>
+      <p>
+        Este site é um protótipo educacional. O formulário não envia dados para servidor externo. As informações digitadas são usadas apenas para simular uma interação na própria página.
+      </p>
+      <ul>
+        <li>Não há coleta real de dados pessoais nesta versão.</li>
+        <li>Não há cookies de marketing ou rastreamento de terceiros.</li>
+        <li>Não há compartilhamento de dados com empresas externas.</li>
+        <li>Para uso oficial, será necessário criar política real, canal de atendimento ao titular e base legal para tratamento dos dados.</li>
+      </ul>
+    </div>
+  </div>
+
+  <button class="back-top" id="backTop" type="button" aria-label="Voltar ao topo">↑</button>
+
   <script src="assets/js/app.js"></script>
 </body>
 </html>

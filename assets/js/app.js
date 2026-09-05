@@ -1,273 +1,182 @@
-/* ==========================================================
-   ACADEMIA BIOFIT — SCROLL STORYTELLING + UI/UX
-========================================================== */
-
 (() => {
-  const body = document.body;
-  const header = document.getElementById("siteHeader");
-  const menuToggle = document.getElementById("menuToggle");
-  const menuLinks = Array.from(document.querySelectorAll(".main-menu a"));
-  const railLinks = Array.from(document.querySelectorAll(".story-rail a"));
-  const progress = document.getElementById("pageProgress");
-  const backToTop = document.getElementById("backToTop");
+  "use strict";
 
-  const updateUI = () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const $ = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+
+  const header = $("#header");
+  const menuBtn = $("#menuBtn");
+  const menu = $("#menu");
+  const progress = $("#scrollProgress");
+  const backTop = $("#backTop");
+  const cookieBanner = $("#cookieBanner");
+  const acceptCookies = $("#acceptCookies");
+  const modal = $("#infoModal");
+  const privacyModal = $("#privacyModal");
+
+  const setHeaderState = () => {
+    const y = window.scrollY || document.documentElement.scrollTop;
+    header?.classList.toggle("is-scrolled", y > 16);
+    backTop?.classList.toggle("is-visible", y > 520);
+
     const max = document.documentElement.scrollHeight - window.innerHeight;
-    const percent = max > 0 ? (scrollTop / max) * 100 : 0;
-
-    header?.classList.toggle("is-scrolled", scrollTop > 18);
-    backToTop?.classList.toggle("is-visible", scrollTop > 620);
-
-    if (progress) progress.style.width = `${percent}%`;
+    const pct = max > 0 ? (y / max) * 100 : 0;
+    if (progress) progress.style.width = `${pct}%`;
   };
 
-  updateUI();
-  window.addEventListener("scroll", updateUI, { passive: true });
+  setHeaderState();
+  window.addEventListener("scroll", setHeaderState, { passive: true });
 
-  menuToggle?.addEventListener("click", () => {
-    const isOpen = body.classList.toggle("menu-open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuBtn?.addEventListener("click", () => {
+    const opened = document.body.classList.toggle("menu-open");
+    menuBtn.setAttribute("aria-expanded", String(opened));
   });
 
-  menuLinks.forEach((link) => {
+  $$(".menu a").forEach(link => {
     link.addEventListener("click", () => {
-      body.classList.remove("menu-open");
-      menuToggle?.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+      menuBtn?.setAttribute("aria-expanded", "false");
     });
   });
 
-  backToTop?.addEventListener("click", () => {
+  backTop?.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  const revealItems = Array.from(document.querySelectorAll(".reveal"));
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      }
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
     });
-  }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
+  }, { threshold: 0.16, rootMargin: "0px 0px -8% 0px" });
 
-  revealItems.forEach((item) => observer.observe(item));
+  $$(".reveal").forEach(el => revealObserver.observe(el));
 
-  const sectionMap = ["inicio", "modalidades", "ecossistema", "conceito", "agendar"];
-
-  const setActive = (id) => {
-    menuLinks.forEach((link) => {
+  const sections = $$(".section-observe[id]");
+  const menuLinks = $$(".menu a[href^='#']");
+  const activeObserver = new IntersectionObserver((entries) => {
+    const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+    const id = visible.target.id;
+    menuLinks.forEach(link => {
       link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
     });
-    railLinks.forEach((link) => {
-      link.classList.toggle("is-active", link.dataset.sectionLink === id);
-    });
-  };
+  }, { threshold: [0.24, 0.45, 0.62] });
 
-  const activeObserver = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+  sections.forEach(section => activeObserver.observe(section));
 
-    if (visible) setActive(visible.target.id);
-  }, { threshold: [0.24, 0.42, 0.62] });
-
-  sectionMap.forEach((id) => {
-    const el = document.getElementById(id);
-    if (el) activeObserver.observe(el);
-  });
-
-  const filters = Array.from(document.querySelectorAll("[data-filter]"));
-  const cards = Array.from(document.querySelectorAll(".ecosystem-card"));
-
-  filters.forEach((button) => {
-    button.addEventListener("click", () => {
-      filters.forEach((item) => item.classList.remove("is-active"));
-      button.classList.add("is-active");
-
-      const filter = button.dataset.filter;
-      cards.forEach((card) => {
-        const shouldShow = filter === "all" || card.dataset.category === filter;
-        card.classList.toggle("is-hidden", !shouldShow);
-      });
-    });
-  });
-
-  const modal = document.getElementById("pillarModal");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalKicker = document.getElementById("modalKicker");
-  const modalText = document.getElementById("modalText");
-
-  const modalCopy = {
-    strength: {
-      kicker: "Heavy Strength",
-      title: "Carga, foco e presença.",
-      text: "Uma área pensada para transformar repetição em evolução: menos distração, mais controle e sensação de força a cada movimento."
+  const modalContent = {
+    musculacao: {
+      title: "Musculação de Alta Performance",
+      text: "Força, controle e constância. Este pilar apresenta a sensação de uma área de treino forte, objetiva e premium, sem depender de tabela técnica de equipamentos."
     },
-    engine: {
-      kicker: "Engine & Sweat",
-      title: "Movimento que liga o corpo.",
-      text: "O ritmo sobe, a respiração muda e o treino vira fluxo. Aqui, energia e resistência trabalham juntas."
+    funcional: {
+      title: "Treino Funcional & Cardio",
+      text: "Movimento, respiração e suor. Um bloco pensado para comunicar energia, ritmo e evolução física de forma visual."
     },
     recovery: {
-      kicker: "Reset & Heal",
-      title: "Recuperar também é performar.",
-      text: "Mobilidade, respiração e cuidado criam continuidade. O corpo descansa sem sair da jornada."
+      title: "Área Recovery & Mobilidade",
+      text: "A experiência também valoriza recuperação, mobilidade e cuidado com o corpo como parte da performance."
     },
-    mind: {
-      kicker: "Core & Mind",
-      title: "Controle de dentro para fora.",
-      text: "Postura, respiração e presença. O pilar mais silencioso da performance também sustenta os demais."
+    pilates: {
+      title: "Studio de Pilates/Yoga",
+      text: "Controle, postura e presença. Este pilar equilibra alta performance com bem-estar e consciência corporal."
     }
   };
 
   const openModal = (key) => {
-    const data = modalCopy[key];
-    if (!modal || !data) return;
-
-    modalKicker.textContent = data.kicker;
-    modalTitle.textContent = data.title;
-    modalText.textContent = data.text;
-
+    const item = modalContent[key];
+    if (!modal || !item) return;
+    $("#modalTitle").textContent = item.title;
+    $("#modalText").textContent = item.text;
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
-    body.classList.add("modal-open");
-    modal.querySelector(".modal__close")?.focus();
+    document.body.classList.add("modal-open");
+    $(".modal__close", modal)?.focus();
   };
 
   const closeModal = () => {
     if (!modal) return;
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
-    body.classList.remove("modal-open");
+    document.body.classList.remove("modal-open");
   };
 
-  document.querySelectorAll("[data-open-modal]").forEach((button) => {
-    button.addEventListener("click", () => openModal(button.dataset.openModal));
+  $$("[data-modal]").forEach(btn => {
+    btn.addEventListener("click", () => openModal(btn.dataset.modal));
   });
 
-  document.querySelectorAll("[data-close-modal]").forEach((button) => {
-    button.addEventListener("click", closeModal);
-  });
+  $$("[data-close-modal]").forEach(btn => btn.addEventListener("click", closeModal));
+
+  const openPrivacy = () => {
+    if (!privacyModal) return;
+    privacyModal.classList.add("is-open");
+    privacyModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    $(".modal__close", privacyModal)?.focus();
+  };
+
+  const closePrivacy = () => {
+    if (!privacyModal) return;
+    privacyModal.classList.remove("is-open");
+    privacyModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+  };
+
+  $$("[data-open-privacy]").forEach(btn => btn.addEventListener("click", openPrivacy));
+  $$("[data-close-privacy]").forEach(btn => btn.addEventListener("click", closePrivacy));
 
   window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeModal();
+    if (event.key === "Escape") {
+      closeModal();
+      closePrivacy();
+    }
   });
 
-  document.getElementById("conceptForm")?.addEventListener("submit", (event) => {
+  // LGPD: no marketing cookies; localStorage only stores consent preference for UI.
+  const consentKey = "biofit_concept_lgpd_consent";
+  try {
+    if (localStorage.getItem(consentKey) !== "accepted") {
+      setTimeout(() => cookieBanner?.classList.add("is-visible"), 800);
+    }
+  } catch {
+    cookieBanner?.classList.add("is-visible");
+  }
+
+  acceptCookies?.addEventListener("click", () => {
+    try { localStorage.setItem(consentKey, "accepted"); } catch {}
+    cookieBanner?.classList.remove("is-visible");
+  });
+
+  const cleanInput = (value, limit) => {
+    return String(value || "")
+      .replace(/[<>]/g, "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, limit);
+  };
+
+  $("#bookingForm")?.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const form = event.currentTarget;
-    const feedback = document.getElementById("formFeedback");
-    const name = form.nome.value.trim();
-    const goal = form.objetivo.value.trim();
+    const status = $("#formStatus");
+    const name = cleanInput(form.nome.value, 80);
+    const email = cleanInput(form.email.value, 120);
+    const message = cleanInput(form.mensagem.value, 300);
 
-    if (!name || !goal) {
-      feedback.textContent = "Preencha nome e objetivo para simular o agendamento conceitual.";
+    if (!name || !email || !email.includes("@")) {
+      status.textContent = "Informe nome e e-mail válido para simular o agendamento.";
       return;
     }
 
-    feedback.textContent = `Perfeito, ${name}. Seu tour conceitual para "${goal}" foi simulado com sucesso.`;
+    if (!form.querySelector(".privacy-check input").checked) {
+      status.textContent = "É necessário aceitar a política conceitual de privacidade.";
+      return;
+    }
+
+    status.textContent = `Agendamento conceitual simulado para ${name}. Nenhum dado foi enviado para servidor.`;
     form.reset();
   });
-
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (window.gsap && window.ScrollTrigger && !reduceMotion) {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.utils.toArray(".pillar").forEach((section) => {
-      const visual = section.querySelector(".pillar__visual img");
-      const word = section.querySelector(".pillar__bg-word");
-      const copy = section.querySelector(".pillar__copy");
-
-      gsap.fromTo(visual,
-        { y: 80, scale: .92, rotate: -3 },
-        {
-          y: -70,
-          scale: 1.04,
-          rotate: 2,
-          ease: "none",
-          scrollTrigger: {
-            trigger: section,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1
-          }
-        }
-      );
-
-      gsap.fromTo(word,
-        { xPercent: -54, opacity: .45 },
-        {
-          xPercent: -46,
-          opacity: .95,
-          ease: "none",
-          scrollTrigger: {
-            trigger: section,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1.2
-          }
-        }
-      );
-
-      gsap.fromTo(copy,
-        { y: 40 },
-        {
-          y: -28,
-          ease: "none",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 78%",
-            end: "bottom 20%",
-            scrub: .9
-          }
-        }
-      );
-    });
-
-    gsap.fromTo(".ecosystem-card",
-      { y: 90, opacity: .3 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: .12,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".ecosystem__grid",
-          start: "top 78%",
-          end: "top 25%",
-          scrub: 1
-        }
-      }
-    );
-
-    gsap.fromTo(".lifestyle-card img",
-      { scale: 1.12 },
-      {
-        scale: 1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".lifestyle",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1
-        }
-      }
-    );
-
-    gsap.utils.toArray(".magnetic").forEach((el) => {
-      el.addEventListener("mousemove", (event) => {
-        const rect = el.getBoundingClientRect();
-        const x = event.clientX - rect.left - rect.width / 2;
-        const y = event.clientY - rect.top - rect.height / 2;
-        gsap.to(el, { x: x * .08, y: y * .16, duration: .35, ease: "power2.out" });
-      });
-
-      el.addEventListener("mouseleave", () => {
-        gsap.to(el, { x: 0, y: 0, duration: .45, ease: "elastic.out(1, .45)" });
-      });
-    });
-  }
 })();

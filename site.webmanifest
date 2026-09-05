@@ -1,10 +1,10 @@
 {
   "name": "Academia BioFit Conceitual",
   "short_name": "BioFit",
-  "description": "Projeto conceitual educacional para apresentação de portfólio.",
+  "description": "Projeto conceitual educacional para portfólio.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#060607",
+  "background_color": "#080808",
   "theme_color": "#ff1b1b",
   "icons": [
     {
